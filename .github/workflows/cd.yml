@@ -1,0 +1,21 @@
+on:
+  push:
+    branches: [main]
+jobs:
+  publish:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: schema publish
+        env:
+          HIVE_TOKEN: ${{ secrets.HIVE_TOKEN }}
+          HIVE_ENDPOINT: ${{ secrets.HIVE_ENDPOINT }}
+        run: |
+          npm i -g @graphql-hive/cli@0.30.0-alpha-20231005153523-259db2a1
+          hive schema:publish "schema.graphql" \
+            --registry.accessToken ${{ env.HIVE_TOKEN }} \
+            --registry.endpoint ${{ env.HIVE_ENDPOINT }} \
+            --service whatever \
+            --url http://localhost:9898/graphql \
+            --github
