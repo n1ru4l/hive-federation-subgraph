@@ -4,5 +4,6 @@ type Query {
 
 type User {
   id: ID!
-  name: String!
+  login: String!
+  foo: String!
 }

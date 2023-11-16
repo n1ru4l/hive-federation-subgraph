@@ -12,7 +12,7 @@ jobs:
           HIVE_TOKEN: ${{ secrets.HIVE_TOKEN }}
           HIVE_ENDPOINT: ${{ secrets.HIVE_ENDPOINT }}
         run: |
-          npm i -g @graphql-hive/cli@0.30.0-alpha-20231005153523-259db2a1
+          npm i -g @graphql-hive/cli@0.31.0-alpha-20231116111027-0f078fae
           hive schema:check "schema.graphql" \
             --registry.accessToken ${{ env.HIVE_TOKEN }} \
             --registry.endpoint ${{ env.HIVE_ENDPOINT }} \
