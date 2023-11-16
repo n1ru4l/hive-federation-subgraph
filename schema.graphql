@@ -4,5 +4,4 @@ type Query {
 
 type User {
   id: ID!
-  name: String!
 }
