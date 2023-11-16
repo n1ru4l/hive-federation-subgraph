@@ -6,4 +6,5 @@ type User {
   id: ID!
   login: String!
   foo: String!
+  a: String!
 }
